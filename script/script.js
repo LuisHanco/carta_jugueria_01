@@ -13,28 +13,28 @@ window.addEventListener('scroll', function() {
 });
 
 
-// // para desaparecer todo el contenido
+// para desaparecer todo el contenido
 
-// function detectarDispositivo() {
-//   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+function detectarDispositivo() {
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-//   const contenidoPrincipal = document.querySelector('.container');
-//   const contenidoPrincipal_2 = document.querySelector('.bottom-menu');
-//   const avisoDesktop = document.querySelector('.desktop-warning');
+  const contenidoPrincipal = document.querySelector('.container');
+  const contenidoPrincipal_2 = document.querySelector('.bottom-menu');
+  const avisoDesktop = document.querySelector('.desktop-warning');
 
-//   if (isMobile) {
-//     contenidoPrincipal.style.display = 'block';
-//     contenidoPrincipal_2.style.display = 'block';
-//     avisoDesktop.style.display = 'none';
-//   } else {
-//     contenidoPrincipal.style.display = 'none';
-//     contenidoPrincipal_2.style.display = 'none';
-//     avisoDesktop.style.display = 'flex';
-//   }
-// }
+  if (isMobile) {
+    contenidoPrincipal.style.display = 'block';
+    contenidoPrincipal_2.style.display = 'block';
+    avisoDesktop.style.display = 'none';
+  } else {
+    contenidoPrincipal.style.display = 'none';
+    contenidoPrincipal_2.style.display = 'none';
+    avisoDesktop.style.display = 'flex';
+  }
+}
 
-// window.addEventListener('load', detectarDispositivo);
-// window.addEventListener('resize', detectarDispositivo);
+window.addEventListener('load', detectarDispositivo);
+window.addEventListener('resize', detectarDispositivo);
 
 
 
