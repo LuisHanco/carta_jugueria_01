@@ -7,10 +7,13 @@
     
 }
 
-.logo_jugo{
+/* .logo_jugo{
   box-shadow: 10px 5px 10px orange;
-}
+} */
 
+.logo_jugo{
+  filter: drop-shadow(10px 5px 10px orange);
+}
 
 
 
