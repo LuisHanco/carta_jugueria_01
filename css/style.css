@@ -1,81 +1,111 @@
-*{
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-    touch-action: pan-x pan-y;
-    overscroll-behavior: none;
-    
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  touch-action: pan-x pan-y;
+  overscroll-behavior: none;
 }
 
 /* .logo_jugo{
   box-shadow: 10px 5px 10px orange;
 } */
-
-.logo_jugo{
-  filter: drop-shadow(10px 5px 10px black);
+.logo_jugo {
+  filter: drop-shadow(10px 5px 10px aqua);
 }
 
-
-
-body{
-background: #16222A;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, #3A6073, #16222A);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, #3A6073, #16222A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-background-repeat: no-repeat;
-background-position: center;
-background-size: contain;
-background-attachment: fixed;
-overflow-x: hidden;
+body {
+  background: #16222A; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #3A6073, #16222A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
+.father {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1000vh;
+  overflow: hidden;
+}
+.father .sons {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+}
+.father .sons span {
+  min-width: 30px;
+  height: 30px;
+  background: #fff;
+  box-shadow: 0 0 0 10px rgba(79, 195, 220, 0.2666666667), 0 0 50px #705afe, 0 0 100px #4fc3dc;
+  margin: 0 4px;
+  border-radius: 50%;
+  animation: animate 15s linear infinite;
+  animation-duration: calc(80s / var(--i));
+}
+.father .sons span:nth-child(even) {
+  background: #ffc107;
+  box-shadow: 0 0 0 10px #f0db4f, 0 50px #ff2d75, 0 0 100px #F23B00;
+}
 
+@keyframes animate {
+  0% {
+    transform: translateY(300vh) scale(0);
+  }
+  100% {
+    transform: translateY(-10vh) scale(1);
+  }
+}
 /* Container General */
-.container{
-    background-color: black;
-    opacity: .7;
-    width: 100%;
-    overflow: hidden;
-    padding-bottom: 40px;
-    
+.container {
+  background-color: black;
+  opacity: 0.7;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 40px;
 }
 
 /* Contenedor de Titulos */
-
-.caja_uno{
-    height:900px;
-    width: 100%;
+.caja_uno {
+  height: 900px;
+  width: 100%;
 }
 
-
-
-.title{
-    padding: 40px 0 0 0;
+.title {
+  padding: 40px 0 0 0;
 }
+
 /* Primer Titulo  */
-.title h1{
-
-    /* font-family: "Satisfy", cursive; */
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: 400;
-    text-align: center;
-    font-size: 18px;
-    color: white;
-    height: 30px;
-    line-height: 1.2;
+.title h1 {
+  /* font-family: "Satisfy", cursive; */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 400;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  height: 30px;
+  line-height: 1.2;
 }
 
 /* Segundo Titulo */
-
-.title .city{
-    color: #22F8FF;
-    font-weight: 700;
-    font-size: 30px;
-    margin: 10px 0 0 0;
+.title .city {
+  color: #22F8FF;
+  font-weight: 700;
+  font-size: 30px;
+  margin: 10px 0 0 0;
 }
 
 /* Tercer Titulo */
-
-.cart{
+.cart {
   font-family: "Pacifico", cursive;
   font-weight: 400;
   text-align: center;
@@ -83,74 +113,72 @@ overflow-x: hidden;
   font-size: 60px;
   height: 59px;
 }
-.uno{
-    color: orange;
-  }
-.tres{
-    color: orange;
+
+.uno {
+  color: orange;
+}
+
+.tres {
+  color: orange;
 }
 
 /* Contenedor de Logo de Pagina */
-
-.logo{
-    display:flex;
-    justify-content: center;
-    position: relative;
-    top: -55px;
-    background-image: url(../img/fondos.png);
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: contain;
-    z-index: -1;
-}
-
-/* Sombreados de Fondo de Logo */
-
-.logo::before{
-  content: '';
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: linear-gradient(rgba(255,255,255,0),rgba(0,0,0,1));
+.logo {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -55px;
+  background-image: url(../img/fondos.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
   z-index: -1;
 }
 
-.logo::after{
-  content: '';
+/* Sombreados de Fondo de Logo */
+.logo::before {
+  content: "";
   width: 100%;
   height: 100vh;
   position: absolute;
   top: 0;
   right: 0;
-  background: linear-gradient(rgba(0,0,0,1),rgba(255,255,255,0));
+  background: linear-gradient(rgba(255, 255, 255, 0), rgb(0, 0, 0));
+  z-index: -1;
+}
+
+.logo::after {
+  content: "";
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(rgb(0, 0, 0), rgba(255, 255, 255, 0));
   z-index: -2;
 }
 
-.logo img{
-    width: 500px;
-    max-width: 100%;
-    
+.logo img {
+  width: 500px;
+  max-width: 100%;
 }
 
 /* Texto de Logo */
-
-.msj{
-    width: 100%;
-    height: 100px;
-    color: white;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    position: relative;
-    top: -60px;
+.msj {
+  width: 100%;
+  height: 100px;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  top: -60px;
 }
 
-.msj::after{
-  content: '';
+.msj::after {
+  content: "";
   border-top: 20px solid aqua;
   border-left: 20px solid transparent;
   border-bottom: 20px solid transparent;
@@ -159,112 +187,99 @@ overflow-x: hidden;
   top: 12px;
 }
 
-
-.msj p{
+.msj p {
   /* border: 1px solid white; */
-    width: 70%;
-    padding: 10px;
-    font-size: 26px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  width: 70%;
+  padding: 10px;
+  font-size: 26px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
-@media (max-width:700) {
-  .msj p{
+@media (max-width: 700) {
+  .msj p {
     font-size: 20px;
   }
-
-
+}
+.linear {
+  width: 70%;
 }
 
-
-.linear{
-    width: 70%;
+.linear_title {
+  color: aqua;
 }
 
-
-
-.linear_title{
-    color: aqua;
+.linear_wth {
+  font-weight: bold;
+  font-size: 27px;
 }
 
-.linear_wth{
-    font-weight: bold;
-    font-size: 27px;
-}
-
-@media (max-width:700px) {
-  .linear_wth{
+@media (max-width: 700px) {
+  .linear_wth {
     font-weight: bold;
     font-size: 24px;
+  }
 }
-
+.caja_dos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.7s, transform 0.7s;
+  margin: 100px 0 50px 0;
 }
-
-
-
-
-.caja_dos{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    opacity: 0;
-    transform: translateY(60px);
-    transition: opacity .7s, transform .7s;
-    margin: 100px 0 50px 0;
-}
-
 
 .caja_dos.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.list{
-    font-family: "Pacifico", cursive;
-    font-weight: 400;
-    text-align: center;
-    font-size: 60px;
-    /* border: solid 1px white; */
-    height: 70px;
-    transition: all .4s;
-  }
-  .uno{
-      color: orange;
-    }
-  .tres{
-      color: orange;
-      margin-bottom: 15px;
-      margin-top: 15px;
-  }
-  
-/* Lista de Menus */
+.list {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  text-align: center;
+  font-size: 60px;
+  /* border: solid 1px white; */
+  height: 70px;
+  transition: all 0.4s;
+}
 
-  .single-menu {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    flex-direction: column;
-    color: white;
-    /* border: solid 1px white; */
-    width: 90%;
-    /* margin-top: 0px; */
+.uno {
+  color: orange;
+}
+
+.tres {
+  color: orange;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+/* Lista de Menus */
+.single-menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  /* border: solid 1px white; */
+  width: 90%;
+  /* margin-top: 0px; */
 }
 
 @media (max-width: 768px) {
   .single-menu {
-    
     align-items: center;
   }
 }
-
-.menu-content{
-    /* border: solid 1px white; */
-    width: 90%;
-    flex: 1;
-    padding: 0 1rem;
+.menu-content {
+  /* border: solid 1px white; */
+  width: 90%;
+  flex: 1;
+  padding: 0 1rem;
 }
+
 /* .single-menu img {
     border-radius: 50%;
     max-width: 110px;
@@ -276,31 +291,30 @@ overflow-x: hidden;
 .single-menu:hover img {
     transform: rotate(360deg);
 } */
-
 .single-menu .menu-content h5 {
-    /* text-transform: capitalize; */
-    font-size: 18px;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    border-bottom: 1px dashed white;
-    padding-bottom: 10px;
-    color: aqua;
+  /* text-transform: capitalize; */
+  font-size: 18px;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  border-bottom: 1px dashed white;
+  padding-bottom: 10px;
+  color: aqua;
 }
 
-@media (max-width:750px ) {
-  .single-menu .menu-content h5{
+@media (max-width: 750px) {
+  .single-menu .menu-content h5 {
     font-size: 16px;
   }
 }
 .single-menu .menu-content h5 span {
-    color: white;
-    float: right;
-    font-weight: bold;
-    font-size: 18px;
-    /* font-style: italic; */
+  color: white;
+  float: right;
+  font-weight: bold;
+  font-size: 18px;
+  /* font-style: italic; */
 }
 
-.single-menu .menu-content p{
+.single-menu .menu-content p {
   font-size: 15px;
   margin-bottom: 0;
 }
@@ -316,170 +330,158 @@ overflow-x: hidden;
     margin-top: 0.5rem;
   }
 } */
-
-.punto{
-    position: relative;
-    top: 22px;
-    right: 12px;
-    color: aqua;
-    font-size: 15px;
+.punto {
+  position: relative;
+  top: 22px;
+  right: 12px;
+  color: aqua;
+  font-size: 15px;
 }
-  
+
 footer {
-    /* background-color: #333; */
-    color: #fff;
-    /* padding: 0px 0; */
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    /* border: solid 1px white; */
-    height: 260px;
-
-  }
-  footer p{
-    font-weight: bold;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  }
-  
-  .social-icons {
-    /* border: solid 1px white; */
-    list-style: none;
-    /* margin: 0; */
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    /* justify-content: space-evenly; */
-    gap: 60px;
-  }
-  
-  .social-icons li {
-    display: inline-block;
-    /* border: solid 1px white; */
-    width: 30px;
-    height: 30px;
-    border-radius: 15px;
-    background-color: white;
-    padding: 10px;
-    
-    
-  }
-  
-  .social-icons li:first-child {
-    margin-left: 0;
-  }
-  
-  .social-icons a {
-    color: #000;
-    font-size: 20px;
-    font-size: 35px;
-    transition: color 0.3s ease;
-  }
-  
-  .social-icons a:hover {
-    color: #000;
-    opacity: .6;
-  }
-
-
-  @media (max-width: 768px) {
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      margin-top: 10px;
-    }
-  }
-
-
-
-  .bottom-menu {
-    max-width: 100%;
-    margin: 0 auto;
+  /* background-color: #333; */
+  color: #fff;
+  /* padding: 0px 0; */
   text-align: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #000;
-    opacity: 0.9;
-    color: #fff;
+  display: flex;
+  justify-content: center;
+  /* border: solid 1px white; */
+  height: 260px;
+}
+
+footer p {
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.social-icons {
+  /* border: solid 1px white; */
+  list-style: none;
+  /* margin: 0; */
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  /* justify-content: space-evenly; */
+  gap: 60px;
+}
+
+.social-icons li {
+  display: inline-block;
+  /* border: solid 1px white; */
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: white;
+  padding: 10px;
+}
+
+.social-icons li:first-child {
+  margin-left: 0;
+}
+
+.social-icons a {
+  color: #000;
+  font-size: 20px;
+  font-size: 35px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #000;
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .social-icons {
     display: flex;
     justify-content: center;
-    padding: 10px;
-    text-align: center;
-    transform: translateY(100%); /* Inicialmente oculto debajo de la pantalla */
-    transition: transform 0.6s ease; /* Transición para la propiedad transform */
-    z-index: 999; /* Asegura que el menú esté por encima de otros elementos */
+    margin-top: 10px;
   }
-  
-  .bottom-menu {
-    /* ... */
-    transform: translateY(100%); /* Inicialmente oculto debajo de la pantalla */
-  }
-  
-  .bottom-menu.show {
-    transform: translateY(0); /* Muestra el menú cuando se agrega la clase .show */
-  }
+}
+.bottom-menu {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  opacity: 0.9;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  text-align: center;
+  transform: translateY(100%); /* Inicialmente oculto debajo de la pantalla */
+  transition: transform 0.6s ease; /* Transición para la propiedad transform */
+  z-index: 999; /* Asegura que el menú esté por encima de otros elementos */
+}
 
+.bottom-menu {
+  /* ... */
+  transform: translateY(100%); /* Inicialmente oculto debajo de la pantalla */
+}
+
+.bottom-menu.show {
+  transform: translateY(0); /* Muestra el menú cuando se agrega la clase .show */
+}
+
+.bottom-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+@media (max-width: 768px) {
   .bottom-menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    align-items: center;
+  }
+}
+.bottom-menu li {
+  margin: 0 10px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  cursor: pointer;
+  max-width: 25%;
+  flex-grow: 1;
+}
 
-  }
+.bottom-menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem;
+  display: block;
+  font-size: 12px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
 
-  @media (max-width: 768px) {
-    .bottom-menu ul {
-      flex-wrap: wrap;
-      align-items: center;
-    }
-  }
-  
-  .bottom-menu li {
-    margin: 0 10px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    cursor: pointer;
-    max-width: 25%;
-    flex-grow: 1;
-  }
-  
-  .bottom-menu a {
-    color: #fff;
-    text-decoration: none;
-    padding: 0.5rem;
-    display: block;
-    font-size: 12px;
-    text-align: center;
-    transition: all 0.3s ease-in-out;
-  }
+.fa-duotone {
+  font-size: 18px;
+  font-weight: bold;
+}
 
-  .fa-duotone{
-    font-size: 18px;
-    font-weight: bold;
-  }
-@media (max-width:700px){
-  .fa-duotone{
+@media (max-width: 700px) {
+  .fa-duotone {
     font-size: 15px;
   }
-  .bottom-menu a{
+  .bottom-menu a {
     font-size: 10px;
   }
 }
-
-  .bottom-menu.hidden {
-    top: calc(100% + 20px); /* Oculto debajo de la pantalla */
-  }
+.bottom-menu.hidden {
+  top: calc(100% + 20px); /* Oculto debajo de la pantalla */
+}
 
 /* Iconos */
 /* .fas {
     font-size: 30px;
     margin-right: 5px;
 } */
-
-
-
 .desktop-warning {
   padding: 20px;
   height: 420px;
@@ -490,12 +492,12 @@ footer {
   flex-direction: column;
 }
 
-.desktop-warning h1{
+.desktop-warning h1 {
   /* width: 200px;*/
   /* border: solid 1px white; */
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   position: relative;
   bottom: 140px;
   text-align: center;
   color: aqua;
-}
+}/*# sourceMappingURL=style.css.map */
